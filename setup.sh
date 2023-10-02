@@ -3,9 +3,9 @@
 sudo apt upgrade -y
 sudo apt update -y
 
-sudo apt install terminator
-sudo apt install git
-sudo apt install python3.10-venv
+sudo apt install terminator -y
+sudo apt install git -y
+sudo apt install python3.10-venv -y
 
 sudo snap install nvim --classic
 
