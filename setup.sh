@@ -7,6 +7,7 @@ sudo apt install terminator -y
 sudo apt install git -y
 sudo apt install python3.10-venv -y
 sudo apt install gcc -y
+sudo apt install npm -y
 
 sudo snap install nvim --classic
 
