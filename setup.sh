@@ -32,4 +32,7 @@ sudo chmod 440 /etc/sudoers
 sudo rm /bin/editor
 sudo ln -s /snap/nvim/current/usr/bin/nvim /bin/editor
 
+echo "alias vi='nvim .'" >> ~/.bash_aliases
+echo "alias vim='nvim .'" >> ~/.bash_aliases
+
 rm -rf ~/ubuntu-setup
