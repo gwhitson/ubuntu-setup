@@ -10,8 +10,6 @@ sudo apt install npm -y
 
 sudo snap install nvim --classic
 
-cd ~
-
 git clone https://github.com/gwhitson/ubuntu-setup
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
@@ -28,9 +26,9 @@ echo "alias vim='nvim .'" >> ~/.bash_aliases
 ssh-keygen -t rsa -b 2048  -f ~/.ssh/git_key -N ""
 
 rm -rf ~/ubuntu-setup
-#sudo apt upgrade -y
+sudo apt upgrade -y
 
 echo "Add the following key to github to use ssh"
 cat ~/.ssh/git_key.pub
 
-rm setup.sh
+rm ~/Downloads/setup.sh
