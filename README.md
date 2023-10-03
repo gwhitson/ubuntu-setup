@@ -1,6 +1,5 @@
-# ubuntu-setup -- WIP
-
-Setup script for ubuntu 22.04 LTS, intended to be ran on a minimal GUI install right
+# ubuntu-setup bash script
+Setup script for ubuntu (22.04 LTS), intended to be ran on a minimal GUI install right
 as the install finishes.
 
 connect to internet and run the setup script. You only need the setup script at first
@@ -14,7 +13,5 @@ github repo so that when you are able to start nvim, you can just run ':PackerSy
 and then ':LspInstall {name of coding language Ex: python, sh, c++}' or on any file
 you open, run ':LspInstall' and LSPZero will prompt you to install an LSP that
 matches the open file. You may need to install additional software to run certain LSP's
-
-sets sudo timeout to 4 hours as that is my preferred timeout length
 
 removes the setup script and any files left over
