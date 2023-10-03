@@ -25,7 +25,6 @@ sudo ln -s /snap/nvim/current/usr/bin/nvim /bin/editor
 echo "alias vi='nvim .'" >> ~/.bash_aliases
 echo "alias vim='nvim .'" >> ~/.bash_aliases
 
-mkdir ~/.ssh
 ssh-keygen -t rsa -b 2048  -f ~/.ssh/git_key -N ""
 
 rm -rf ~/ubuntu-setup
