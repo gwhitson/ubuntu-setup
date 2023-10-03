@@ -22,7 +22,7 @@ mv ~/ubuntu-setup/nvim ~/.config/nvim
 sudo cp /etc/sudoers ~/ubuntu-setup/.tempfile
 sudo chmod 777 ~/ubuntu-setup/.tempfile
 
-echo "Defaults:${USER} timestamp:timeout 240" >> ~/ubuntu-setup/.tempfile
+echo "Defaults:${USER} timestamp_timeout 240" >> ~/ubuntu-setup/.tempfile
 
 sudo mv ~/ubuntu-setup/.tempfile /etc/sudoers
 
