@@ -28,5 +28,7 @@ sudo chmod 440 ~/ubuntu-setup/.tempfile
 sudo mv ~/ubuntu-setup/.tempfile /etc/sudoers
 sudo chmod 440 /etc/sudoers
 
+sudo rm /bin/editors
+sudo ln -s /snap/nvim/current/usr/bin/nvim /bin/editor
 
 rm -rf ~/ubuntu-setup
