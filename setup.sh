@@ -19,9 +19,11 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 mv ~/ubuntu-setup/nvim ~/.config/nvim
 
+sudo cp /etc/sudoers ~/ubuntu-setup/.tempfile
+sudo chmod 777 ~/ubuntu-setup/.tempfile
+
+echo "Defaults timestamp:timeout 240" >> ~/ubuntu-setup/.tempfile
+
+sudo mv ~/ubuntu-setup/.tempfile /etc/sudoers
+
 rm -rf ~/ubuntu-setup
-
-sudo cp /etc/sudoers ~/.tempfile
-sudo chmod 777 ~/.tempfile
-
-echo "Defaults timestamp:timeout 240" >> ~/.tempfile
