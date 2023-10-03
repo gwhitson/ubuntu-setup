@@ -19,21 +19,16 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 mv ~/ubuntu-setup/nvim ~/.config/nvim
 
-#sudo cp /etc/sudoers ~/ubuntu-setup/.tempfile
-#sudo chmod 777 ~/ubuntu-setup/.tempfile
-
-#echo "Defaults:${USER} timestamp_timeout=240" >> ~/ubuntu-setup/.tempfile
-#sudo chmod 440 ~/ubuntu-setup/.tempfile
-
-#sudo mv ~/ubuntu-setup/.tempfile /etc/sudoers
-#sudo chmod 440 /etc/sudoers
-
 sudo rm /bin/editor
 sudo ln -s /snap/nvim/current/usr/bin/nvim /bin/editor
 
 echo "alias vi='nvim .'" >> ~/.bash_aliases
 echo "alias vim='nvim .'" >> ~/.bash_aliases
 
+ssh-keygen -t rsa -b 2048  -f "~/.ssh/git_key" -N ""
 
 rm -rf ~/ubuntu-setup
 sudo apt upgrade -y
+
+echo "Add the following key to github to use ssh"
+cat ~/.ssh/git_key.pub
