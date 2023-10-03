@@ -23,7 +23,10 @@ sudo cp /etc/sudoers ~/ubuntu-setup/.tempfile
 sudo chmod 777 ~/ubuntu-setup/.tempfile
 
 echo "Defaults:${USER} timestamp_timeout 240" >> ~/ubuntu-setup/.tempfile
+sudo chmod 440 ~/ubuntu-setup/.tempfile
 
 sudo mv ~/ubuntu-setup/.tempfile /etc/sudoers
+sudo chmod 440 /etc/sudoers
+
 
 rm -rf ~/ubuntu-setup
