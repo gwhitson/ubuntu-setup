@@ -1,7 +1,6 @@
 #!/bin/bash
 
 sudo apt update -y
-sudo apt upgrade -y
 
 sudo apt install terminator -y
 sudo apt install git -y
@@ -35,4 +34,6 @@ sudo ln -s /snap/nvim/current/usr/bin/nvim /bin/editor
 echo "alias vi='nvim .'" >> ~/.bash_aliases
 echo "alias vim='nvim .'" >> ~/.bash_aliases
 
+
 rm -rf ~/ubuntu-setup
+sudo apt upgrade -y
