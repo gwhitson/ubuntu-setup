@@ -32,3 +32,5 @@ rm -rf ~/ubuntu-setup
 
 echo "Add the following key to github to use ssh"
 cat ~/.ssh/git_key.pub
+
+rm setup.sh
