@@ -29,7 +29,7 @@ mkdir ~/.ssh
 ssh-keygen -t rsa -b 2048  -f "~/.ssh/git_key" -N ""
 
 rm -rf ~/ubuntu-setup
-sudo apt upgrade -y
+#sudo apt upgrade -y
 
 echo "Add the following key to github to use ssh"
 cat ~/.ssh/git_key.pub
