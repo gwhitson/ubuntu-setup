@@ -18,7 +18,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 mv ~/ubuntu-setup/nvim ~/.config/nvim
 
 sudo rm /bin/editor
-sudo ln -s /snap/nvim/current/usr/bin/nvim/bin/editor
+sudo ln -s /snap/nvim/current/usr/bin/nvim /bin/editor
 
 echo "alias vi='nvim .'" >> ~/.bash_aliases
 echo "alias vim='nvim .'" >> ~/.bash_aliases
