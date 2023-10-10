@@ -15,6 +15,8 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 
 vim.keymap.set("n","<leader>P",":! git commit -a -m 'update'<CR> :! git push <CR>")
 
+vim.keymap.set("n","<C-H>", ":! cat ~/nvimRemaps<CR>")
+
 --[[
 HARPOON KEYBINDS
 vim.keymap.set("n","<leader>a", mark.add_file)
