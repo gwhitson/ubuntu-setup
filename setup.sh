@@ -17,11 +17,13 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 mv ~/ubuntu-setup/nvim ~/.config/nvim
 
+ln -s ~/.config/nvim/lua/gavin/remap.lua ~/nvimRemaps
+
 sudo rm /bin/editor
 sudo ln -s /snap/nvim/current/usr/bin/nvim /bin/editor
 
-echo "alias vi='nvim .'" >> ~/.bash_aliases
-echo "alias vim='nvim .'" >> ~/.bash_aliases
+echo "alias vi='nvim'" >> ~/.bash_aliases
+echo "alias vim='nvim'" >> ~/.bash_aliases
 
 ssh-keygen -t rsa -b 2048  -f ~/.ssh/git_key -N ""
 
