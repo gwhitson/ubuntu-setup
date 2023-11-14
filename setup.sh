@@ -8,29 +8,40 @@ sudo apt install python3.10-venv -y
 sudo apt install gcc -y
 sudo apt install npm -y
 
-sudo snap install nvim --classic
+sudo snap list | grep -q "nvim"
+if [ $? -eq 1 ] ; then
+    sudo snap install nvim --classic
+fi
 
-git clone https://github.com/gwhitson/ubuntu-setup
+git clone https://github.com/gwhitson/ubuntu-setup ~/.local/share/ubuntu-setup
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-mv ~/ubuntu-setup/nvim ~/.config/nvim
-
-ln -s ~/.config/nvim/lua/gavin/remap.lua ~/nvimRemaps
+ln -s ~/.local/share/ubuntu-setup/nvim ~/.config/nvim
 
 sudo rm /bin/editor
 sudo ln -s /snap/nvim/current/usr/bin/nvim /bin/editor
 
-echo "alias vi='nvim'" >> ~/.bash_aliases
-echo "alias vim='nvim'" >> ~/.bash_aliases
+grep -q ~/.bash_aliases "alias vi='nvim'" 2>/dev/null
+if [ $? -eq 1 ] ; then 
+    echo "alias vi='nvim'" >> ~/.bash_aliases
+fi
 
-ssh-keygen -t rsa -b 2048  -f ~/.ssh/git_key -N ""
+grep -q ~/.bash_aliases "alias vim='nvim'" 2>/dev/null
+if [ $? -eq 1 ] ; then 
+    echo "alias vim='nvim'" >> ~/.bash_aliases
+fi
 
-rm -rf ~/ubuntu-setup
+
+ls ~/.ssh | grep -q ".pub"
+if [ $? -eq 1 ]
+    ssh-keygen -t rsa -b 2048  -f ~/.ssh/git_key -N ""
+else
+    echo "ensure SSH key has been uploaded to github"
+fi
+
 sudo apt upgrade -y
 
-echo "Add the following key to github to use ssh"
-cat ~/.ssh/git_key.pub
 
 rm ~/Downloads/setup.sh
