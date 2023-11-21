@@ -33,3 +33,5 @@ grep -q ~/.bash_aliases "alias vim='nvim'" 2>/dev/null
 if [ $? -eq 1 ] ; then 
     echo "alias vim='nvim'" >> ~/.bash_aliases
 fi
+
+nvim +PackerSync
