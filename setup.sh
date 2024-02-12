@@ -2,11 +2,14 @@
 
 sudo apt update -y
 
-sudo apt install terminator -y
 sudo apt install git -y
 sudo apt install python3.10-venv -y
 sudo apt install gcc -y
 sudo apt install npm -y
+sudo apt install imagemagick
+sudo apt install python3-pip
+sudo apt install tmux
+pip3 install pywal
 
 sudo snap list | grep -q "nvim"
 if [ $? -eq 1 ] ; then
@@ -19,18 +22,19 @@ if [ $? -eq 0 ] ; then
 fi
 git clone https://github.com/gwhitson/ubuntu-setup ~/.local/share/ubuntu-setup
 
-ls ~/.local/share/nvim/site/pack | grep -q "packer"
-if [ $? -eq 1 ] ; then
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-fi
-
+ln -s ~/.local/share/ubuntu-setup/colors.json ~/.cache/wal/colors.json
 
 ls ~/.config | grep -q "nvim"
 if [ $? -eq 0 ] ; then
 	rm -rf ~/.config/nvim
 fi
 ln -s ~/.local/share/ubuntu-setup/nvim ~/.config/nvim
+
+ls ~/.config | grep -q "tmux"
+if [ $? -eq 0 ] ; then
+	rm -rf ~/.config/tmux
+fi
+ln -s ~/.local/share/ubuntu-setup/tmux ~/.config/tmux
 
 sudo rm /bin/editor
 sudo ln -s /snap/nvim/current/usr/bin/nvim /bin/editor
@@ -45,6 +49,10 @@ if [ $? -eq 1 ] ; then
     echo "alias vim='nvim'" >> ~/.bash_aliases
 fi
 
+grep -q ~/.bashrc "wal -R" 2>/dev/null
+if [ $? -eq 1 ] ; then 
+    echo "wal -R" >> ~/.bashrc
+fi
 
 ls ~/.ssh | grep -q ".pub"
 if [ $? -eq 1 ] ; then
