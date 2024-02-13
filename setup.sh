@@ -9,7 +9,7 @@ sudo apt install npm -y
 sudo apt install imagemagick -y
 sudo apt install python3-pip -y
 sudo apt install tmux -y
-pip3 install pywal -y
+sudo pip3 install pywal -y
 
 sudo snap list | grep -q "nvim"
 if [ $? -eq 1 ] ; then
