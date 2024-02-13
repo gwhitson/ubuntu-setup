@@ -22,7 +22,7 @@ if [ $? -eq 0 ] ; then
 fi
 git clone https://github.com/gwhitson/ubuntu-setup ~/.local/share/ubuntu-setup
 
-ln -s ~/.local/share/ubuntu-setup/colors.json ~/.cache/wal/colors.json
+cp -r ~/.local/share/ubuntu-setup/colors.json ~/.cache/wal/colors.json
 
 ls ~/.config | grep -q "nvim"
 if [ $? -eq 0 ] ; then
