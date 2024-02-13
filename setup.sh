@@ -36,6 +36,7 @@ fi
 cp -r ~/.local/share/ubuntu-setup/tmux ~/.config/tmux
 sudo rm /bin/editor
 sudo ln -s /snap/nvim/current/usr/bin/nvim /bin/editor
+touch ~/.bash_aliases
 grep -q ~/.bash_aliases "alias vi='nvim'" 2>/dev/null
 if [ $? -eq 1 ] ; then 
     echo "alias vi='nvim'" >> ~/.bash_aliases
@@ -45,10 +46,10 @@ grep -q ~/.bash_aliases "alias vim='nvim'" 2>/dev/null
 if [ $? -eq 1 ] ; then 
     echo "alias vim='nvim'" >> ~/.bash_aliases
 fi
-
+touch ~/.bashrc
 grep -q ~/.bashrc "wal -R" 2>/dev/null
 if [ $? -eq 1 ] ; then 
-    echo "wal -R 2>/dev/null" >> ~/.bashrc
+    echo "wal -R 2>/d	ev/null" >> ~/.bashrc
 fi
 
 ls ~/.ssh | grep -q ".pub"
