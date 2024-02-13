@@ -49,7 +49,7 @@ fi
 touch ~/.bashrc
 grep -q "wal -R" ~/.bashrc 2>/dev/null
 if [ $? -eq 1 ] ; then 
-    echo "wal -R 2>/d	ev/null" >> ~/.bashrc
+    echo "wal -R 2>/dev/null" >> ~/.bashrc
 fi
 
 ls ~/.ssh | grep -q ".pub"
