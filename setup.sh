@@ -6,10 +6,10 @@ sudo apt install git -y
 sudo apt install python3.10-venv -y
 sudo apt install gcc -y
 sudo apt install npm -y
-sudo apt install imagemagick
-sudo apt install python3-pip
-sudo apt install tmux
-pip3 install pywal
+sudo apt install imagemagick -y
+sudo apt install python3-pip -y
+sudo apt install tmux -y
+pip3 install pywal -y
 
 sudo snap list | grep -q "nvim"
 if [ $? -eq 1 ] ; then
