@@ -28,13 +28,13 @@ ls ~/.config | grep -q "nvim"
 if [ $? -eq 0 ] ; then
 	rm -rf ~/.config/nvim
 fi
-ln -s ~/.local/share/ubuntu-setup/nvim ~/.config/nvim
+cp -r ~/.local/share/ubuntu-setup/nvim ~/.config/nvim
 
 ls ~/.config | grep -q "tmux"
 if [ $? -eq 0 ] ; then
 	rm -rf ~/.config/tmux
 fi
-ln -s ~/.local/share/ubuntu-setup/tmux ~/.config/tmux
+cp -r ~/.local/share/ubuntu-setup/tmux ~/.config/tmux
 
 sudo rm /bin/editor
 sudo ln -s /snap/nvim/current/usr/bin/nvim /bin/editor

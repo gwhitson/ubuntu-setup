@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require ('gavin.lazy')
---require ('gavin.colors')
+require ('gavin.colors')
 require ('gavin.remap')
 require ('gavin.set')
 
