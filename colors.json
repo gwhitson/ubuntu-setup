@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/gavin/Pictures/background.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0E080B",
+        "foreground": "#dfd3bf",
+        "cursor": "#dfd3bf"
+    },
+    "colors": {
+        "color0": "#0E080B",
+        "color1": "#BB5227",
+        "color2": "#9B6E4E",
+        "color3": "#7B8368",
+        "color4": "#B28D5C",
+        "color5": "#E5A15F",
+        "color6": "#FBD072",
+        "color7": "#dfd3bf",
+        "color8": "#9c9385",
+        "color9": "#BB5227",
+        "color10": "#9B6E4E",
+        "color11": "#7B8368",
+        "color12": "#B28D5C",
+        "color13": "#E5A15F",
+        "color14": "#FBD072",
+        "color15": "#dfd3bf"
+    }
+}
