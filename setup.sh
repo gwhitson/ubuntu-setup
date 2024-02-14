@@ -33,6 +33,8 @@ if [ $? -eq 0 ] ; then
 	rm -rf ~/.config/tmux
 fi
 
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 cp -r ~/.local/share/ubuntu-setup/tmux ~/.config/tmux
 sudo rm /bin/editor
 sudo ln -s /snap/nvim/current/usr/bin/nvim /bin/editor
