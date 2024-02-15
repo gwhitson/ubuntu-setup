@@ -30,10 +30,10 @@ local ui = require("harpoon.ui")
 vim.keymap.set("n","<leader>a", mark.add_file)
 vim.keymap.set("n","<leader>s", ui.toggle_quick_menu)
 
-vim.keymap.set("n","<leader>7", function() ui.nav_file(1) end)
-vim.keymap.set("n","<leader>8", function() ui.nav_file(2) end)
-vim.keymap.set("n","<leader>9", function() ui.nav_file(3) end)
-vim.keymap.set("n","<leader>0", function() ui.nav_file(4) end)
+vim.keymap.set("n","<C-u>", function() ui.nav_file(1) end)
+vim.keymap.set("n","<C-i>", function() ui.nav_file(2) end)
+vim.keymap.set("n","<C-o>", function() ui.nav_file(3) end)
+vim.keymap.set("n","<C-p>", function() ui.nav_file(4) end)
 
 -- lsp config
 local lsp = require('lsp-zero')
