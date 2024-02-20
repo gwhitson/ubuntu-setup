@@ -21,7 +21,6 @@ local plugins = {
 	'christoomey/vim-tmux-navigator',
 	{
 		'VonHeikemen/lsp-zero.nvim',
-		tag = 'v3.x',
 		dependencies = {
 			{'neovim/nvim-lspconfig'},
 			{'williamboman/mason.nvim'},

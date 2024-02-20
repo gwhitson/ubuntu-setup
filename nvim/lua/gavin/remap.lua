@@ -38,18 +38,47 @@ vim.keymap.set("n","<leader>0", function() ui.nav_file(4) end)
 -- lsp config
 local lsp = require('lsp-zero')
 
-lsp.preset('recommended')
+lsp.on_attach(function(client, bufnr)
+    local cmp = require('cmp')
+    cmp.setup({
+        cmp_mappings = lsp.defaults.cmp_mappings({
+            ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+            ['<C-i>'] = cmp.mapping.select_next_item(cmp_select),
+            ['<C-y>'] = cmp.mapping.complete(),
+            --['<C-Space>'] = cmp.mapping.complete(),
+        }),
+        formatting = lsp.cmp_format(),
+    })
+end)
 
-local cmp = require('cmp')
 
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-	['<C-i>'] = cmp.mapping.select_next_item(cmp_select),
-	['<C-y>'] = cmp.mapping.confirm({ select = true }),
-	['<C-Space>'] = cmp.mapping.complete()
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = {'pylsp', 'clangd'},
+    handlers = {
+        lsp.default_setup,
+        pylsp = function()
+            require('lspconfig').pylsp.setup({
+                settings = {
+                    pylsp = {
+                        plugins = {
+                            pycodestyle = {
+                                ignore = {'W391', 'E265'},
+                                maxLineLength = 120
+                            }
+                        }
+                    }
+                }
+            })
+        end,
+        clangd = function()
+            require('lspconfig').clangd.setup({})
+        end,
+    },
 })
-lsp.setup()
+
+
+--lsp.setup()
 
 -- telescope config
 --local builtin = require('telescope.builtin')
