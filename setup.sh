@@ -44,6 +44,11 @@ if [ $? -eq 1 ] ; then
     echo "alias vi='nvim'" >> ~/.bash_aliases
 fi
 
+grep -q "alias clear_nvim_cache='rm ~/.local/state/nvim/swap/*.swp'" ~/.bash_aliases 2>/dev/null
+if [ $? -eq 1 ] ; then 
+    echo "alias clear_nvim_cache='rm ~/.local/state/nvim/swap/*.swp'" >> ~/.bash_aliases
+fi
+
 grep -q "alias vim='nvim'" ~/.bash_aliases 2>/dev/null
 if [ $? -eq 1 ] ; then 
     echo "alias vim='nvim'" >> ~/.bash_aliases
