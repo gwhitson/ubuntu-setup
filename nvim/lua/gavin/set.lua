@@ -1,7 +1,7 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.mouse = ""
+vim.opt.clipboard = "unnamed"
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
